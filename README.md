@@ -23,5 +23,15 @@
 - film tablosunda bulunan title sütunundaki film isimlerinden en az 4 adet büyük ya da küçük harf farketmesizin 'T' karakteri içeren film isimlerini sıralayınız.
     - `select * from film f where f.title ILike '%t%t%t%t%';`
 - film tablosunda bulunan tüm sütunlardaki verilerden title 'C' karakteri ile başlayan ve uzunluğu (length) 90 dan büyük olan ve rental_rate 2.99 olan verileri sıralayınız.
-    - `select * from film f where f.title Like 'C%' and f.length > 90 and f.rental_rate=2.99;`
+    - `select * from film f where f.title Like 'C%' and f.length > 90 and f.rental_rate=2.99;`;
+- film tablosunda bulunan replacement_cost sütununda bulunan birbirinden farklı değerleri sıralayınız.
+    - `select DISTINCT REPLACEMENT_COST FROM FILM ORDER BY REPLACEMENT_COST;` 
+- film tablosunda bulunan replacement_cost sütununda birbirinden farklı kaç tane veri vardır?,
+    - `select COUNT(DISTINCT REPLACEMENT_COST) FROM FILM;`
+- film tablosunda bulunan film isimlerinde (title) kaç tanesini T karakteri ile başlar ve aynı zamanda rating 'G' ye eşittir?
+    - `select COUNT(DISTINCT title) from film f where f.title ILIKE 'T%' and f.rating = 'G';` 
+- country tablosunda bulunan ülke isimlerinden (country) kaç tanesi 5 karakterden oluşmaktadır?
+    - `select Count(country) from country where country ILIKE '_____';`
+- city tablosundaki şehir isimlerinin kaç tanesi 'R' veya r karakteri ile biter?
+    - `select Count(city) from city where city ILIKE '%r';` 
 

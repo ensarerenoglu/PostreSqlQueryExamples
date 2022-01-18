@@ -57,12 +57,12 @@
 - city tablosunda bulunan şehir verilerini country_id sütununa göre gruplandırdıktan sonra en fazla şehir sayısı barındıran country_id bilgisini ve şehir sayısını paylaşınız.
     - `select country_id, Count(Distinct city) from city c group by c.country_id order by Count(Distinct city) desc limit 1;`
 - test veritabanınızda employee isimli sütun bilgileri id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100) olan bir tablo oluşturalım.
-    - ``` Create Table employee(
+     ``` Create Table employee(
 	id serial Primary Key,
 	name Varchar(50) not null,
 	birthday Date,
 	email Varchar(100)
-);``` 
+	); ``` 
 - Oluşturduğumuz employee tablosuna 'Mockaroo' servisini kullanarak 50 adet veri ekleyelim.
     - `insert into employee (name, birthday, email) values ('Stern', '2016-07-17', 'sfehnersx@xrea.com');` 
 - Sütunların her birine göre diğer sütunları güncelleyecek 5 adet UPDATE işlemi yapalım.

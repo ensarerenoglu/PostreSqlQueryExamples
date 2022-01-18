@@ -40,4 +40,12 @@
     - `select * from film f where f.title ILIKE '%n' order by f.length offset 5 limit 5;`   
 - customer tablosunda bulunan last_name sütununa göre azalan yapılan sıralamada store_id 1 olmak koşuluyla ilk 4 veriyi sıralayınız.
     - `select * from customer c where c.store_id = 1 order by last_name desc limit 4;` 
+- film tablosunda bulunan rental_rate sütunundaki değerlerin ortalaması nedir?
+    - `select ROUND(AVG(rental_rate)) from film;`
+- film tablosunda bulunan filmlerden kaç tanesi 'C' karakteri ile başlar?
+    - `select Count(title) from film f where f.title ILIKE 'c%';` 
+- film tablosunda bulunan filmlerden rental_rate değeri 0.99 a eşit olan en uzun (length) film kaç dakikadır?
+    - `select MAX(length) from film f where f.rental_rate = 0.99;` 
+- film tablosunda bulunan filmlerin uzunluğu 150 dakikadan büyük olanlarına ait kaç farklı replacement_cost değeri vardır?
+    - `select Count(Distinct replacement_cost) from film f where f.length > 150;` 
 

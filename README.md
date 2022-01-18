@@ -48,4 +48,12 @@
     - `select MAX(length) from film f where f.rental_rate = 0.99;` 
 - film tablosunda bulunan filmlerin uzunluğu 150 dakikadan büyük olanlarına ait kaç farklı replacement_cost değeri vardır?
     - `select Count(Distinct replacement_cost) from film f where f.length > 150;` 
+- film tablosunda bulunan filmleri rating değerlerine göre gruplayınız.
+    - `select rating , Count(*) from film f Group by f.rating;`
+- film tablosunda bulunan filmleri replacement_cost sütununa göre grupladığımızda film sayısı 50 den fazla olan replacement_cost değerini ve karşılık gelen film sayısını sıralayınız.
+    - `select replacement_cost, Count(*) from film f Group by f.replacement_cost having Count(*) >50 Order By f.replacement_cost; ` 
+- customer tablosunda bulunan store_id değerlerine karşılık gelen müşteri sayılarını nelerdir? 
+    - `select c.store_id, Count(Distinct customer_id) from customer c Group by c.store_id;` 
+- city tablosunda bulunan şehir verilerini country_id sütununa göre gruplandırdıktan sonra en fazla şehir sayısı barındıran country_id bilgisini ve şehir sayısını paylaşınız.
+    - `select country_id, Count(Distinct city) from city c group by c.country_id order by Count(Distinct city) desc limit 1;`
 

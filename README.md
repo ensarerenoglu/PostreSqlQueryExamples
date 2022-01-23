@@ -73,4 +73,11 @@ set name = 'Ensar', birthday = '1900-12-01', email = 'ensar@ensar.com'
 where Id = 1 ;` 
 - Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım.
     - `Delete from employee where Id=1;`
+- city tablosu ile country tablosunda bulunan şehir (city) ve ülke (country) isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.
+	- `select c.city,co.country from city c join country co on c.country_id = co.country_id order by country;` 
+- customer tablosu ile payment tablosunda bulunan payment_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.
+	- `select c.first_name,c.last_name,p.payment_id from customer c join payment p on c.customer_id = p.customer_id` 
+- customer tablosu ile rental tablosunda bulunan rental_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.
+	- `select c.first_name,c.last_name,r.rental_id from customer c join rental r on c.customer_id = r.customer_id;` 
+
 
